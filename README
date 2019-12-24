@@ -6,3 +6,6 @@ Cheat sheet: https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html
 		https://www.bencode.net/blob/nasmcheatsheet.pdf
 tuto : https://beta.hackndo.com/assembly-basics/
 	https://www.esaracco.fr/documentation/assembly/assembly/les-premiers-pas.html
+
+Holy table:
+	http://shell-storm.org/shellcode/files/syscalls.html
