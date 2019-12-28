@@ -1,14 +1,16 @@
-.section
-	_global ft_write
+; rdi
+; rsi
+; rdx
+; rcx
+; r8
+; r9
+; rax -> ret
 
-_ft_write
-	push rbp
-	mov rsp, rbp
-	mov rbx,[rsp-128]
-	mov rcx,rsp-64
-	mov rdx[rsp]
-	call 0x4
-	leave
+section .text
+	global _ft_write
+
+_ft_write:
+	mov rax,0x2000004
+	syscall
 	ret
-
 	
