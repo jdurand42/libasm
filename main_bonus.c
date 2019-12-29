@@ -15,4 +15,11 @@ int main()
 	printf("test 0, s:%s\n", s2);
 	ft_bzero(s3, 9);
 	printf("test overflow:%s\n", s3);
+
+	char a[]="   123";
+	printf("atoia: %s\n%d\n", a, ft_atoi(a));
+	char b[]="   123!!!!";
+	printf("atoib: %s\n%d\n", b, ft_atoi(b));
+	char c[]="      ";
+	printf("atoib: %s\n%d\n", c, ft_atoi(c));
 }
