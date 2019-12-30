@@ -1,3 +1,4 @@
+
 section .text
 	global _ft_strlen
 
@@ -17,5 +18,3 @@ count:
 end:
 	mov rax,rcx
 	ret
-
-
