@@ -1,18 +1,29 @@
 section .text
 	global _ft_strdup
 	extern _ft_strlen
-	extern _ft_strcpy
 	extern _malloc
+	extern _ft_strcpy
 
-_ft_strdup
-	xor rax,rax
-	xor rdx,rdx
-	xor rcx,rcx
+_ft_strdup:
+	cmp rdi,0x0
+	je malloc_fail
 	call _ft_strlen
-	mov rdx,rax
-	mov rdi,rdx
+	inc rax
+	push rdi
+	mov rdi,rax
 	call _malloc
-	mov rdi,rsp-8
+	cmp rax,0x0
+	je malloc_fail
+	pop rdi ; get back rdi
+	; second part, align 16 bit on the stack
+	push rsi
+	mov rsi,rdi ; put src in rsi
+	mov rdi,rax ; put dest in rdi
+	call _ft_strcpy
+	pop rsi
+	ret
 	
-	
+malloc_fail:
+	mov rax,0x0
+	ret
 	

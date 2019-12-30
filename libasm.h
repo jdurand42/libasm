@@ -7,3 +7,4 @@ void	ft_bzero(void *s, size_t n);
 int	ft_atoi(const char *s);
 int	ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *s);
+char *ft_strdup(const char *s);

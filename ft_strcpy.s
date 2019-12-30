@@ -12,7 +12,7 @@ cpy:
 	je end
 	mov dl,BYTE [rsi + rcx]
 	mov BYTE [rdi + rcx],dl
-	inc rcx;
+	inc rcx
 	jmp cpy
 
 end:
