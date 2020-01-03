@@ -24,7 +24,7 @@ _ft_write:
 	;xor rax,rax
 	;mov rax,0x1
 	;neg rax
-;	ret
+	ret
 
 ;end:
 ;	ret

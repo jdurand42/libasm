@@ -2,24 +2,45 @@
 #include <stdlib.h>
 #include "libasm.h"
 
+typedef struct s_list
+{
+	void 	*data;
+	struct 	s_list *next;
+} t_list;
+
+t_list *lst_new(void *content, int id)
+{
+	t_list *new;
+
+	if (!(new = malloc(sizeof(t_list*))))
+		return (NULL);
+	if (!(new->data = malloc(sizeof(void*))))
+		return (NULL);
+	new->next = 0;
+}
+
+void 	lst_add(t_list *list, t_list *new, int *id)
+{
+	if (list == NULL)
+	{
+		list->data = id;
+		list->new = NULL;
+	}
+	while (list->next != NULL)
+	{
+		list
+	}
+}
+
 int main()
 {
 	char s[] = "abcdef";
 	char s2[] = "abcdef";
 	char s3[] = "abcdef";
-	printf("s:%s\n", s);
-	ft_bzero(s, 6);
-	printf("s:%s\n", s);
-	printf("test s+4: %c\n", s[3]);
-	ft_bzero(s2, 0);
-	printf("test 0, s:%s\n", s2);
-	ft_bzero(s3, 9);
-	printf("test overflow:%s\n", s3);
+	int a = 1;
+	int b = 2;
+	int c = 3;
+	t_list *list = NULL;
 
-	char a[]="   123";
-	printf("atoia: %s\n%d\n", a, ft_atoi(a));
-	char b[]="   123!!!!";
-	printf("atoib: %s\n%d\n", b, ft_atoi(b));
-	char c[]="      ";
-	printf("atoib: %s\n%d\n", c, ft_atoi(c));
+
 }

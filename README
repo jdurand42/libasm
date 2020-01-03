@@ -1,10 +1,14 @@
 
 Do  a small utility library in asm
 
+makefile cmd:
+make -> make libasm.a
+main -> compil main
+sani -> compil main with sanitizer
 
 Some DOC:
 
-nasm.us full man: 
+nasm.us full man:
 		https://www.nasm.us/xdoc/2.09.04/html/nasmdoc3.html
 
 Cheat sheet: 	https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html
@@ -19,3 +23,7 @@ tuto : 	https://beta.hackndo.com/assembly-basics/
 
 Holy table:
 		http://shell-storm.org/shellcode/files/syscalls.html
+
+bon a savoir:
+		https://beta.hackndo.com/stack-introduction/
+		https://beta.hackndo.com/memory-allocation/
