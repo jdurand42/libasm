@@ -6,7 +6,7 @@
 #    By: jdurand <jdurand@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019\06/24 18:35:31 by jdurand           #+#    #+#              #
-#    Updated: 2019/10/13 20:17:57 by jdurand          ###   ########.fr        #
+#    Updated: 2020/01/03 15:59:32 by jdurand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,9 @@ $(NAME) :
 		NASM -f macho64 ./srcs/ft_strcmp.s ;
 		NASM -f macho64 ./srcs/ft_strlen.s ;
 		ar -rc $(NAME) $(OBJS)
+
+main 	:	
+		gcc main.c libasm.a -o test_asm	
 
 clean	:
 			$(RM) $(OBJS)

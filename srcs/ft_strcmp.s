@@ -6,7 +6,8 @@ _ft_strcmp:
 	xor rax,rax
 	xor rdx,rdx
 	jmp ft_cmp
-ft_cmp:	
+
+ft_cmp:
 	mov dl,[rdi + rcx]
 	cmp dl, BYTE 0x0
 	je end
@@ -16,17 +17,19 @@ ft_cmp:
 	jne end
 	inc rcx
 	jmp ft_cmp
-	
+
 end:
 	cmp dl,[rsi + rcx]
 	jb rsi_is_greater
 	sub dl,[rsi + rcx]
-	mov rax,rdx
+	cmp dl,0
+	jne rsi_is_smaller
+	ret
+
+rsi_is_smaller:
+	add rax,1
 	ret
 
 rsi_is_greater:
-	mov dl,[rsi + rcx]
-	sub dl,[rdi + rcx]
-	neg rdx
-	mov rax,rdx
+	sub rax,1
 	ret
