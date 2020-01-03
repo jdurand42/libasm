@@ -27,8 +27,13 @@ void	ft_test_cpy()
 	char *ret;
 	char d[] = "11111111111";
 	char s[] = "222222";
+	char *e = "";
+	char *n = "dsqdqd";
 	ret = ft_strcpy(d, s);
 	printf("d: %s\ns: %s\nret: %s\n", d, s, ret);
+	ret = ft_strcpy(n, e);
+	printf("d: %s\n", ret);
+	
 }
 
 void 	ft_test_strcmp()
@@ -42,6 +47,8 @@ void 	ft_test_strcmp()
 void	ft_test_strlen()
 {
 	printf("ret strlen: %zu\n", ft_strlen("richard"));
+	printf("ret strlen big string: %zu\n", ft_strlen("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+	printf("ret strlen empty: %zu\n", ft_strlen("")); 
 }
 
 void	ft_test_strdup()
@@ -53,6 +60,10 @@ void	ft_test_strdup()
 //	printf("strdup null: %s\n", strdup(NULL));
 	char *sm = ft_strdup("lalala");
 	free(sm);
+	char *se = ft_strdup("");
+	printf("strdup empty: %s\n", se);
+	se[0] = '&';
+	free(se);
 }
 
 int main(int ac, char **av)
@@ -64,10 +75,10 @@ int main(int ac, char **av)
 	ft_test_cpy();
 	ft_test_strcmp();
 	ft_test_strlen();
-	printf("bad fd official: %zd\n",write(3, "&", 1));
-	printf("bad fd mine: %zu\n", ft_write(3, "hhhh", 4));
-	printf("bad fd read official: %d\n", read(3, buffer, 11));
-	printf("bad fd read mine: %d\n", ft_read(3, buffer, 11));
+//	printf("bad fd official: %zd\n",write(3, "&", 1));
+//	printf("bad fd mine: %zu\n", ft_write(3, "hhhh", 4));
+//	printf("bad fd read official: %d\n", read(3, buffer, 11));
+//	printf("bad fd read mine: %d\n", ft_read(3, buffer, 11));
 	ft_test_strdup();
 	return (0);
 }

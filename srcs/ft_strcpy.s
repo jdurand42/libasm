@@ -16,6 +16,8 @@ cpy:
 	jmp cpy
 
 end:
-	mov [rdi + rcx],BYTE 0x0
+	; mov [rdi + rcx],BYTE 0x0
+	mov dl,BYTE 0x0
+	mov BYTE [rdi + rcx],dl
 	mov rax,rdi
 	ret
