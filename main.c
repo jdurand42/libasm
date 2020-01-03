@@ -27,8 +27,8 @@ void	ft_test_cpy()
 	char *ret;
 	char d[] = "11111111111";
 	char s[] = "222222";
-	char *e = "";
-	char *n = "dsqdqd";
+	char e[] = "";
+	char n[] = "dsqdqd";
 	ret = ft_strcpy(d, s);
 	printf("d: %s\ns: %s\nret: %s\n", d, s, ret);
 	ret = ft_strcpy(n, e);
