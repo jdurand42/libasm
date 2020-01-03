@@ -31,8 +31,9 @@ void	ft_test_cpy()
 	char n[] = "dsqdqd";
 	ret = ft_strcpy(d, s);
 	printf("d: %s\ns: %s\nret: %s\n", d, s, ret);
+	printf("d[7] -- %c \n", d[7]);
 	ret = ft_strcpy(n, e);
-	printf("d: %s\n", ret);
+	printf("srcs empty d: %s\n", ret);
 
 }
 
@@ -44,7 +45,9 @@ void 	ft_test_strcmp()
 	printf("-----------\n");
 	printf("comp 3 _mine: %d\ncomp 3 _officiel : %d\n", ft_strcmp("hello", "hellz"), strcmp("hello", "hellz"));
 	printf("-----------\n");
-	printf("comp null _mine: %d\ncomp null _officiel : %d\n", ft_strcmp("", ""), strcmp("", ""));
+	printf("comp null _mine: %d\ncomp empty _officiel : %d\n", ft_strcmp("", ""), strcmp("", ""));
+	//printf("comp null _mine: %d\ncomp empty _officiel : %d\n", ft_strcmp(NULL, NULL), strcmp(NULL, NULL));
+
 }
 
 void	ft_test_strlen()
