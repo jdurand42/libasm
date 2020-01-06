@@ -74,7 +74,7 @@ void	ft_test_strdup()
 
 int main(int ac, char **av)
 {
-	char buffer[12];
+char buffer[12];
 	write(1, "TEST WRITE\n", sizeof("TEST WRITE\n"));
 	printf("ret write: %zd\n", ft_write(1, "test 1, normal, fd 1\n", 0));
 
