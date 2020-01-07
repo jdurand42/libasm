@@ -51,8 +51,11 @@ bonus	:
 main 	: clean
 		gcc main.c libasm.a -o test_asm
 
-main_bonus	: clean
-		gcc main_bonus.c libasm_bonus.a -o test_bonus
+main_bonus_sani	: clean
+		gcc -fsanitize=address -g3 main_bonus.c libasm_bonus.a -o test_bonus
+
+mb:	clean
+	gcc main_bonus.c libasm_bonus.a -o test_bonus
 
 sani	: clean
 		gcc -fsanitize=address -g3 main.c libasm.a -o test_sani
