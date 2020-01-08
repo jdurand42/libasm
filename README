@@ -3,8 +3,9 @@ Do  a small utility library in asm
 
 makefile cmd:
 make -> make libasm.a
-main -> compil main
-sani -> compil main with sanitizer
+c -> compil main
+cs -> compil main with sanitizer
+cb -> bonus
 
 Some DOC:
 

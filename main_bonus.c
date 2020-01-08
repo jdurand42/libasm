@@ -14,18 +14,18 @@ int main()
 	int e = 5;
 	t_list *lst = NULL;
 	int *buffer_int;
-/*	ft_lstadd_front(&lst, ft_lstnew(&a));
+	ft_lstadd_front(&lst, ft_lstnew(&a));
 	ft_lstadd_front(&lst, ft_lstnew(&b));
 	ft_lstadd_front(&lst, ft_lstnew(&c));
 	ft_lstadd_front(&lst, ft_lstnew(&d));
-	buffer_int = (int*)lst->data;
-	printf("check list: first ele: %d\n", *buffer_int);
+	//buffer_int = (int*)lst->data;
+	//printf("check list: first ele: %d\n", *buffer_int);
 	printf("TEST LST_SIZE: ----------\n");
 	printf("size of lst (4): %d\n", ft_list_size(lst));
 	printf("size of lst 0 (null)(4): %d\n", ft_list_size(NULL));
-*/
-	t_list *lst_null = NULL;
-	printf("TEST LIST_PUSH_FRONT ----------\n");
+
+//	t_list *lst_null = NULL;
+/*	printf("TEST LIST_PUSH_FRONT ----------\n");
 	ft_list_push_front(NULL, &a);
 	printf("test with pointeur null ok\n");
 //	printf("%zu\n", sizeof(t_list*));
@@ -38,10 +38,10 @@ int main()
 //	ft_list_push_front(&lst_null, &a);
 //	buffer_int = (int*)lst_null->data;
 //	printf("first elem, (1): %d\n", *buffer_int);
-//	ft_list_remove_if(&alst, , &a, &ft_strcmp, NULL);
+//	ft_list_remove_if(&alst, , &a, &ft_strcmp, NULL);*/
 }
-/*
 
+/*
 a = 5;
 *pa = &a
 **ppa = &pa

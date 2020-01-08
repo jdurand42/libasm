@@ -1,6 +1,8 @@
 section .text
 	global _ft_atoi
 
+; ne gere pas de signes et uniquement l'espace
+
 _ft_atoi:
 	xor rax,rax
 	xor rcx,rcx
@@ -22,15 +24,15 @@ is_number:
 	jle end
 	cmp [rdi + rcx], BYTE 0x3a
 	jge end
-	mul r8   ; on garde probablement au moins mal le contenu de rax et il faut utiliser un tanpon
+	mul r8
 	mov dl,[rdi + rcx]
 	sub dl,0x30
 	add rax,rdx
 	inc rcx
 	jmp is_number
-	
+
 end:
-	ret	
+	ret
 
 error:
 	mov rax,0x0

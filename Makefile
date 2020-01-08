@@ -23,7 +23,8 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -rf
 
-BONUS	=	./bonus/ft_list_size.o ft_bonus.o ./bonus/ft_list_push_front.o
+BONUS	=	./bonus/ft_list_size.o ft_bonus.o  \
+			./bonus/ft_atoi.o ./bonus/ft_bzero.o
 
 all		:	$(NAME)
 
@@ -44,28 +45,30 @@ bonus	:
 		NASM -f macho64 ./srcs/ft_strcmp.s ;
 		NASM -f macho64 ./srcs/ft_strlen.s ;
 		NASM -f macho64 ./bonus/ft_list_size.s ;
-		NASM -f macho64 ./bonus/ft_list_push_front.s ;
+		NASM -f macho64 ./bonus/ft_atoi.s ;
+		NASM -f macho64 ./bonus/ft_bzero.s ;
 		gcc -c ./bonus/ft_bonus.c ;
 		ar -rc libasm_bonus.a $(OBJS) $(BONUS)
 
-main 	: clean
+c 	: clean
 		gcc main.c libasm.a -o test_asm
 
-main_bonus_sani	: clean
+cbs	: clean
 		gcc -fsanitize=address -g3 main_bonus.c libasm_bonus.a -o test_bonus
 
-mb:	clean
+cb:	clean
 	gcc main_bonus.c libasm_bonus.a -o test_bonus
 
-sani	: clean
+cs	: clean
 		gcc -fsanitize=address -g3 main.c libasm.a -o test_sani
 
 clean	:
 			$(RM) $(OBJS) $(BONUS)
 
 fclean	:	clean
-			$(RM) $(NAME) libasm_bonus.a test_asm test_sani test_sani.DSYM
+			$(RM) $(NAME) libasm_bonus.a test_asm test_sani test_sani.DSYM test_bonus.DYSM \
+			test_bonus
 
 re	:	fclean	all
 
-.PHONY	:	clean	fclean	all	bonus
+.PHONY	:	clean	fclean	all	bonus c cs cb cbs re
